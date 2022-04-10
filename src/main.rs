@@ -1,3 +1,8 @@
+use std::env;
+use std::fs;
+mod parse_config;
+mod log4;
+
 fn main() {
-    println!("Hello, world!");
+    log4::log("info", "main", "Hello, world!");
 }
