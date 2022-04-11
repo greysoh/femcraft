@@ -10,3 +10,4 @@ FROM mcr.microsoft.com/vscode/devcontainers/rust:0-${VARIANT}
 
 RUN rustup toolchain install nightly && rustup default nightly
 RUN rustup component add rust-src && rustup component add rust-src --toolchain nightly
+RUN rustup component add rustfmt && rustup component add rustfmt --toolchain nightly
