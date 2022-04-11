@@ -25,7 +25,16 @@
 		},
 		"rust-analyzer.checkOnSave.command": "clippy",
 		"terminal.integrated.defaultProfile.linux": "bash",
-		"terminal.integrated.shellIntegration.enabled": true
+		"terminal.integrated.shellIntegration.enabled": true,
+        "editor.inlayHints.enabled": true,
+        "rust-analyzer.inlayHints.enable": true,
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "rust-analyzer.rustfmt.enableRangeFormatting": true,
+        "[rust]": {
+            "editor.defaultFormatter": "matklad.rust-analyzer",
+            "editor.formatOnSave": true
+        },
 	},
 
 	// Add the IDs of extensions you want installed when the container is created.
