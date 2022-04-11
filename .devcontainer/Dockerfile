@@ -8,6 +8,9 @@ FROM mcr.microsoft.com/vscode/devcontainers/rust:0-${VARIANT}
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
 
-RUN rustup toolchain install nightly && rustup default nightly
-RUN rustup component add rust-src && rustup component add rust-src --toolchain nightly
-RUN rustup component add rustfmt && rustup component add rustfmt --toolchain nightly
+RUN rustup toolchain install nightly --allow-downgrade -c rustfmt -c rust-src -c clippy \
+ && rustup default nightly
+# RUN rustup component add rust-src && rustup component add rust-src --toolchain nightly
+# RUN rustup component add rustfmt && rustup component add rustfmt --toolchain nightly
+# RUN rustup component add clippy && rustup component add clippy --toolchain nightly
+RUN rustup update
