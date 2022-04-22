@@ -1,15 +1,9 @@
-pub fn get_value(config: &str, key: &str) -> String {
+pub fn get_config(config: &str) -> Vec<&str> {
     let mut found_value = false;
-    for token in config.trim().split("=") {
-        if found_value {
-            return token.to_string();
-        }
-        if token.starts_with("#") {
-            continue;
-        }
-        if token == key {
-           found_value = true;
-        }
-    }
-    return "".to_string();
+    let configuration: Vec<&str> = config.trim().split("\n").filter(|x| !x.starts_with("#")).collect();
+    return configuration;
+}
+
+pub fn get_value(config: Vec<&str>) -> String {
+    todo!("figure out how to parse the vec");
 }
