@@ -1,5 +1,4 @@
 pub fn get_config(config: &str) -> Vec<&str> {
-    let mut found_value = false;
     let configuration: Vec<&str> = config.trim().split("\n").filter(|x| !x.starts_with("#")).collect();
     return configuration;
 }
